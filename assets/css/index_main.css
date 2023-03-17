@@ -2,27 +2,31 @@
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 67.5rem;
-  margin-top: 3.125rem;
+  width: 100%;
+  margin-top: 100px;
   background-color: #fff;
+}
+#heart {
+  position: absolute;
+  height: 1.8125rem;
+  width: 2.125rem;
+  left: 72.1875rem;
+  top: 54.4375rem;
+  border-radius: 0rem;
 }
 .content-travel {
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
-  margin: 0;
-  background-color: #fff;
-}
-.content-travel-list {
-  height: 20rem;
-  width: 100%;
-  margin: 0 auto;
+  margin: 1.25rem 0;
   background-color: #fff;
 }
 .travel-list-title {
   font-size: 1.875rem;
   font-weight: 700;
-  margin: 1.25rem 0;
-  text-align: center;
+  text-align: left;
+  margin-left: 3.75rem;
   color: #000;
 }
 .travel-list-ul {
@@ -40,8 +44,8 @@
 }
 
 .travel-list-li {
-  width: 16.875rem;
-  height: 30rem;
+  width: 32rem;
+  height: 25rem;
   background-color: #f8f8f8;
   border-radius: 0.875rem;
   margin-left: 4.375rem;
@@ -55,4 +59,8 @@
     rgba(0, 0, 0, 0) 0%,
     rgba(0, 0, 0, 0.5) 100%
   );
+}
+.travel-info {
+  margin: 1.5rem;
+  font-size: 1.5rem;
 }

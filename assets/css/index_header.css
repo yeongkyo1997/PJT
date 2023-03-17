@@ -5,11 +5,10 @@
   font-weight: 400;
   font-style: normal;
 }
-
 .header-nav {
   display: flex;
   justify-content: space-between;
-  width: 80%;
+  width: auto;
   align-items: center;
   padding: 1.25rem;
   background-color: #fff;
@@ -18,6 +17,13 @@
   font-size: 1.25rem;
   font-family: "Pretendard-Regular";
   margin-left: 4.375rem;
+  margin-right: 4.375rem;
+  /* 고정시키기 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
 .header-nav-sub {
