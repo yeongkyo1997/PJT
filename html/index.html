@@ -8,8 +8,18 @@
     <link rel="stylesheet" href="../assets/css/index.css" />
     <link rel="stylesheet" href="../assets/css/index_main.css" />
     <link rel="stylesheet" href="../assets/css/index_header.css" />
+    <link rel="stylesheet" href="../assets/css/index_modal.css" />
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=264d45bbdeb485701fb83d802daa856e"
+    ></script>
   </head>
   <body>
+    <div class="modal">
+      <div class="modal-body">
+        <div id="map" style="width: 100%; height: 400px"></div>
+      </div>
+    </div>
     <header>
       <nav class="header-nav">
         <div id="logo">
@@ -21,50 +31,20 @@
         <div class="header-nav-sub">
           <a href="login.html">로그인</a>
           <a href="register.html">회원가입</a>
+          <a href="">로그아웃</a>
+          <a href="">마이페이지</a>
         </div>
       </nav>
     </header>
     <main class="container">
       <section class="content-travel">
-        <div class="travel-list-title">경기도</div>
-        <ul class="travel-list-ul">
-          <li class="travel-list-li">
-            <img src="../assets/img/travel-sample.jpg" alt="" />
-            <div class="travel-info">[경기도]</div>
-          </li>
-          <li class="travel-list-li">
-            <img src="../assets/img/travel-sample.jpg" alt="" />
-            <div class="travel-info">[경기도]</div>
-          </li>
-          <li class="travel-list-li">
-            <img src="../assets/img/travel-sample.jpg" alt="" />
-            <div class="travel-info">[경기도]</div>
-          </li>
-          <li class="travel-list-li">
-            <img src="../assets/img/travel-sample.jpg" alt="" />
-            <div class="travel-info">[경기도]</div>
-          </li>
-          <li class="travel-list-li">
-            <img src="../assets/img/travel-sample.jpg" alt="" />
-            <div class="travel-info">[경기도]</div>
-          </li>
-          <li class="travel-list-li">
-            <img src="../assets/img/travel-sample.jpg" alt="" />
-            <div class="travel-info">[경기도]</div>
-          </li>
-          <li class="travel-list-li">
-            <img src="../assets/img/travel-sample.jpg" alt="" />
-            <div class="travel-info">[경기도]</div>
-          </li>
-          <li class="travel-list-li">
-            <img src="../assets/img/travel-sample.jpg" alt="" />
-            <div class="travel-info">[경기도]</div>
-          </li>
-        </ul>
+        <div class="travel-list-title"></div>
+        <ul class="travel-list-ul"></ul>
       </section>
-      <section class="content-travel">
-        <div class="travel-list-title">경기도</div>
-        <ul class="travel-list-ul">
+      <section class="content-festival">
+        <div class="festival-list-title"></div>
+        <ul class="festival-list-ul">
+          <!--
           <li class="travel-list-li">
             <img src="../assets/img/travel-sample.jpg" alt="" />
             <div class="travel-info">[경기도]</div>
@@ -96,9 +76,10 @@
           <li class="travel-list-li">
             <img src="../assets/img/travel-sample.jpg" alt="" />
             <div class="travel-info">[경기도]</div>
-          </li>
+          </li> -->
         </ul>
       </section>
     </main>
+    <script type="module" src="../assets/js/index.js"></script>
   </body>
 </html>

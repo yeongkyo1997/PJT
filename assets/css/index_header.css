@@ -5,6 +5,7 @@
   font-weight: 400;
   font-style: normal;
 }
+
 .header-nav {
   display: flex;
   justify-content: space-between;
@@ -16,8 +17,8 @@
   margin-top: 1.25rem;
   font-size: 1.25rem;
   font-family: "Pretendard-Regular";
-  margin-left: 4.375rem;
-  margin-right: 4.375rem;
+  margin-left: 3.125rem;
+  margin-right: 3.125rem;
   /* 고정시키기 */
   position: fixed;
   top: 0;
@@ -28,6 +29,5 @@
 
 .header-nav-sub {
   display: flex;
-  width: 25%;
   justify-content: space-between;
 }
