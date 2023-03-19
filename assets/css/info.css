@@ -1,0 +1,228 @@
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pretendard-Regular';
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* header 태그 안에 CSS 속성 */
+header {
+  height: 70px;
+  background-color: #3ebd5d;
+  color: white;
+  line-height: 70px;
+  padding: 0px 30px;
+}
+
+.header-nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-menu {
+  margin-right: 10px;
+}
+
+.content-user-list h1 {
+  text-align: center;
+}
+
+.login-page {
+  width: 600px;
+  padding: 7% 0 0;
+  margin: auto;
+}
+
+.form {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  max-width: 600px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+h3 {
+  margin-bottom: 8px;
+  text-align: left;
+}
+.join-text {
+  font-family: 'Roboto', sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.nickname {
+  font-family: 'Roboto', sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 70%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+.dupli {
+  line-height: 10px;
+  height: 50px;
+  margin: 20px 0 10px;
+  font-family: 'Roboto', sans-serif;
+  outline: 0;
+  font-size: 15px;
+  background: #949494;
+  width: 28%;
+  border: 2px solid #d7d7d7;
+  padding: 15px;
+  color: #ffffff;
+  border-radius: 5px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border: 2px solid #dbdbdb;
+
+}
+.join-done {
+  margin: 20px 0 10px;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  font-size: 17px;
+  background: #3ebd5d;
+  width: 100%;
+  border: 2px solid #d7d7d7;
+  padding: 15px;
+  color: #ffffff;
+  border-radius: 10px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border: 2px solid #d7d7d7;
+  font-weight: 900;
+}
+#email {
+  width: 48%;
+}
+.whelk {
+  width: 6%;
+  height: 45px;
+  padding: 0.8em 0.5em;
+  border: 1px solid #ffffff;
+  font-family: inherit;
+  border-radius: 0px;
+  font-size: 15px;
+}
+.email-sel {
+  width: 44%;
+  height: 45px;
+  padding: 0.8em 0.5em;
+  border: 1px solid #999;
+  font-family: inherit;
+  background: url('../img/arrow.jpg') no-repeat 95% 50%;
+  border-radius: 0px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font-size: 15px;
+}
+select::-ms-expand {
+  display: none;
+}
+.form button:hover,
+.form button:active,
+.form button:focus {
+  border: 2px solid #ff7b00;
+}
+.dupli:hover {
+  color: #000000;
+}
+.radio-div > span {
+  padding-right: 10px;
+  font-weight: 900;
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #b3b3b3;
+  font-size: 12px;
+}
+.form .message a {
+  color: green;
+  text-decoration: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 100%;
+  margin: 0 auto;
+  height: auto;
+  min-height: 100%;
+  padding-bottom: 70px;
+}
+
+.content-user-list-ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.list-item {
+  margin: 10px;
+}
+
+.user-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* footer 태그 안에 CSS 속성 */
+footer {
+  position: absolute;
+  bottom: 0;
+  background-color: #3ebd5d;
+  color: white;
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+}
+
+.footer-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-list a {
+  margin: 0px 10px;
+}

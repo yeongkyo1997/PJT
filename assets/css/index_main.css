@@ -103,13 +103,33 @@
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  word-break: break-all;
   width: 100%;
 }
 .travel-info {
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
+  white-space: pre-line;
+  word-wrap: break-word;
+  width: 180px;
   margin: 1.5rem;
   font-size: 0.9375rem;
+}
+
+.travel-info-btn {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 0.625rem 1.25rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.25rem 0.125rem;
+  cursor: pointer;
+}
+
+img {
+  width: 16.875rem;
+  height: 11.25rem;
 }
