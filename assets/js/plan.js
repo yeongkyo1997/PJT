@@ -1,57 +1,80 @@
-window.onload = function () {
-  // 장바구니에 담긴 상품의 수량과 합계를 계산하는 함수
-  function updateCart() {
-    var cartTable = document.getElementById("cart-table");
-    var total = 0;
-    for (var i = 1; i < cartTable.rows.length - 1; i++) {
-      var priceCell = cartTable.rows[i].cells[1];
-      var quantityCell = cartTable.rows[i].cells[2];
-      var subtotalCell = cartTable.rows[i].cells[3];
-      var price = parseFloat(priceCell.innerHTML.replace(",", ""));
-      var quantity = parseInt(quantityCell.firstChild.value);
-      if (isNaN(quantity) || quantity < 0) {
-        quantity = 0;
-        quantityCell.firstChild.value = 0;
-      }
-      var subtotal = price * quantity;
-      subtotalCell.innerHTML = subtotal.toLocaleString();
-      total += subtotal;
-    }
-    var totalCell = cartTable.rows[cartTable.rows.length - 1].cells[3];
-    totalCell.innerHTML = total.toLocaleString();
-  }
+import { serviceKey } from "./key.js";
+import { location } from "./location.js";
 
-  // 상품 수량 조절 input 요소의 변경 이벤트를 처리하는 함수
-  function handleQuantityChange(event) {
-    var input = event.target;
-    updateCart();
-  }
+let areaUrl = `https://apis.data.go.kr/B551011/KorService1/areaCode1?serviceKey=${serviceKey}&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json`;
+let btn = document.getElementById("btn-search");
+let idx = 0;
+fetch(areaUrl)
+  .then((response) => response.json())
+  .then((data) => makeOption(data));
 
-  // 상품 삭제 버튼 클릭 이벤트를 처리하는 함수
-  function handleRemoveButtonClick(event) {
-    var button = event.target;
-    var row = button.parentNode.parentNode;
-    row.parentNode.removeChild(row);
-    updateCart();
-  }
+function makeOption(data) {
+  let areas = data.response.body.items.item;
+  let sel = document.getElementById("search-area");
+  areas.forEach(function (area) {
+    let opt = document.createElement("option");
+    opt.setAttribute("value", area.code);
+    opt.appendChild(document.createTextNode(area.name));
+    sel.appendChild(opt);
+  });
+}
 
-  // 상품 수량 조절 input 요소와 삭제 버튼에 이벤트 리스너 등록
-  var inputs = document.querySelectorAll("#cart-table input[type='number']");
-  for (var i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener("change", handleQuantityChange);
-  }
-  var buttons = document.querySelectorAll(".remove-button");
-  for (var i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", handleRemoveButtonClick);
-  }
+btn.addEventListener("click", () => {
+  let areaEle = document.getElementById("search-area").value;
+  let keywordEle = document.getElementById("search-keyword").value;
 
-  // 초기 상태에서 장바구니 합계를 계산
-  updateCart();
+  let url = `https://apis.data.go.kr/B551011/KorService1/searchKeyword1?serviceKey=${serviceKey}&numOfRows=20&pageNo=1&MobileOS=ETC&MobileApp=AppTest&_type=json&listYN=Y&arrange=A&keyword=${keywordEle}&areaCode=${areaEle}`;
 
-  // 결제 버튼 클릭 이벤트를 처리하는 함수
-  document
-    .getElementById("checkout-button")
-    .addEventListener("click", function () {
-      alert("결제가 완료되었습니다!");
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      let items = data.response.body.items.item;
+      console.log(data);
+      let contentEle = document.getElementById("search-content-id").value;
+      let bodyEle = document.getElementById("trip-list");
+      console.log(bodyEle);
+
+      bodyEle.innerHTML = "";
+      items.forEach((item) => {
+        let type = item.contenttypeid;
+
+        if (contentEle == type && item.title.indexOf(keywordEle) != -1) {
+          let sel = document.getElementById("trip-list");
+          let trEle = document.createElement("tr");
+          let imgTd = document.createElement("td");
+
+          imgTd.className = "imgTd";
+
+          let titleTd = document.createElement("td");
+          titleTd.className = "titleTd";
+
+          let addTd = document.createElement("td");
+          addTd.className = "addTd";
+
+          let btnTd = document.createElement("td");
+          btnTd.className = "btnTd";
+          trEle.setAttribute("class", "plan-item");
+          trEle.setAttribute("id", `tr${++idx}`);
+
+          if (item.firstimage === "")
+            imgTd.innerHTML = `<img src="../assets/img/noimage.png">`;
+          else imgTd.innerHTML = `<img src="${item.firstimage}"/>`;
+
+          titleTd.innerHTML = `<div>${item.title}</div>`;
+
+          addTd.innerHTML = `<div>${item.addr1}</div>`;
+
+          btnTd.innerHTML = `<div class="checks etrans">
+                              <input id="${idx}" type="checkbox" />
+                              <label for="ex_chk3"></label>
+                            </div>`;
+
+          trEle.appendChild(imgTd);
+          trEle.appendChild(titleTd);
+          trEle.appendChild(addTd);
+          trEle.appendChild(btnTd);
+          sel.appendChild(trEle);
+        }
+      });
     });
-};
+});

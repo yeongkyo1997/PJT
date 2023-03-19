@@ -23,6 +23,74 @@
       </nav>
     </header>
     <main class="container">
+      <section class="content-festival">
+        <div class="festival-list-title">
+          <form role="search" class="plan-search" onsubmit="return false;">
+            <select
+              id="search-area"
+              class="form-select"
+              aria-label="Default select example"
+            >
+              <option value="0" class="search-item" selected>지역</option>
+            </select>
+            <select
+              id="search-content-id"
+              class="form-select"
+              aria-label="Default select example"
+            >
+              <option value="0" class="search-item" selected>유형</option>
+              <option value="12">관광지</option>
+              <option value="14">문화시설</option>
+              <option value="15">축제공연행사</option>
+              <option value="25">여행코스</option>
+              <option value="28">레포츠</option>
+              <option value="32">숙박</option>
+              <option value="38">쇼핑</option>
+              <option value="39">음식점</option>
+            </select>
+            <input
+              id="search-keyword"
+              class="form-control"
+              type="search"
+              placeholder="검색어"
+              aria-label="검색어"
+            />
+
+            <input
+              type="image"
+              src="../assets/img/search.png"
+              id="btn-search"
+              class="btn btn-outline-success"
+              value="검색"
+              width="70px"
+            />
+          </form>
+          <div class="row">
+            <table class="table table-striped">
+              <tbody id="trip-list">
+                <tr>
+                  <a href="">
+                    <div class="trip-copy"></div>
+                    <td></td>
+                  </a>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="content-plan">
+          <div class="plan-main"></div>
+          <div class="row">
+            <table class="table table-striped">
+              <tbody class="plan-list">
+                <tr>
+                  <a href=""></a>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
       <div class="title"><h1>나의 관광지</h1></div>
       <div class="content">
         <ul class="content-list">
@@ -97,5 +165,6 @@
         </ul>
       </div>
     </main>
+    <script type="module" src="../assets/js/plan.js"></script>
   </body>
 </html>

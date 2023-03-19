@@ -3,7 +3,6 @@ import { location } from "./location.js";
 const getRandom = () => {
   // 0~11
   let random = Math.floor(Math.random() * 12);
-  console.log(location[random]);
   return location[random];
 };
 
@@ -26,7 +25,6 @@ const sendRequestLocation = async () => {
 
 function setTitle(title) {
   let travelList = document.querySelector(".travel-list-title");
-  console.log(travelList);
   travelList.innerHTML = title;
 }
 function createList(items) {
@@ -63,7 +61,6 @@ function createList(items) {
     travelList.appendChild(li);
 
     btn.addEventListener("click", (e) => {
-      console.log(e.target.id);
       const areaUrl = `https://apis.data.go.kr/B551011/KorService1/detailCommon1?MobileOS=ETC&MobileApp=app&_type=json&contentId=${e.target.id}&mapinfoYN=Y&overviewYN=Y&serviceKey=${serviceKey}`;
       let x, y;
       fetch(areaUrl, { method: "GET" })

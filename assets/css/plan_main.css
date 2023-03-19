@@ -49,7 +49,6 @@ table {
 
 th,
 td {
-  border: 0.0625rem solid black;
   padding: 0.625rem;
   text-align: center;
 }
@@ -84,4 +83,39 @@ button {
   display: flex;
   justify-content: space-around;
   margin-top: 1.25rem;
+}
+
+.plan-search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5625rem;
+  font-size: 1.25rem;
+}
+
+.search-item {
+  width: 12.5rem;
+  background-color: #4caf50;
+}
+.content-plan {
+  width: 43.75rem;
+}
+
+.form-select,
+.form-control {
+  margin-top: 0.3125rem;
+  font-size: 1.25rem;
+}
+
+.form-control {
+  width: 15.625rem;
+}
+
+.form-select {
+  display: flex;
+  justify-content: center;
+  font-size: 1.875rem;
+  margin-bottom: 1.5625rem;
+}
+.festival-list-title {
+  margin-left: 4.375rem;
 }
